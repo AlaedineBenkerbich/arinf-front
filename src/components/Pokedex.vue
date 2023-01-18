@@ -53,7 +53,7 @@ export default {
       this.pokemonToUpdate = pokemon;
     },
     getPokemonList() {
-      fetch("http://127.0.0.1:8000/pokemon", {
+      fetch(import.meta.env.VITE_BACKEND_HOST + "/pokemon", {
         "method": "GET",
         "headers": {
           "accept": "application/json"
@@ -72,7 +72,7 @@ export default {
           });
     },
     deletePokemon(pokemon) {
-      fetch("http://127.0.0.1:8000/pokemon/" + pokemon.id, {
+      fetch(import.meta.env.VITE_BACKEND_HOST + "/pokemon/" + pokemon.id, {
         "method": "DELETE",
         "headers": {
           "accept": "*/*"
@@ -96,7 +96,7 @@ export default {
       }
     },
     saveNewPokemon() {
-      fetch("http://127.0.0.1:8000/pokemon", {
+      fetch(import.meta.env.VITE_BACKEND_HOST + "/pokemon", {
         "method": "POST",
         "headers": {
           "accept": "application/json",
@@ -117,7 +117,7 @@ export default {
       this.hideModal()
     },
     updatePokemon() {
-      fetch("http://127.0.0.1:8000/pokemon/" + this.pokemonToUpdate.id, {
+      fetch(import.meta.env.VITE_BACKEND_HOST + "/pokemon/" + this.pokemonToUpdate.id, {
         "method": "PUT",
         "headers": {
           "accept": "*/*",
